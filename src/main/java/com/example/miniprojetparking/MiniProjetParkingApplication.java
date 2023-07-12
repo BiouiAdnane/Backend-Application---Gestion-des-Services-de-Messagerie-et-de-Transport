@@ -23,7 +23,7 @@ public class MiniProjetParkingApplication {
         SpringApplication.run(MiniProjetParkingApplication.class, args);
     }
 
-    @Bean
+    //@Bean
     CommandLineRunner start(PersonneRepo personneRepo,
                             ConducteurRepo conducteurRepo,
                             PermisRepo permisRepo
