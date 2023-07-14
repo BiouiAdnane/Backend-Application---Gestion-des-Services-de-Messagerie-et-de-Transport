@@ -36,7 +36,7 @@ public class MiniProjetParkingApplication {
                             VoyageRepo voyageRepo
                             ) {
         return args -> {
-            Stream.of("Adnan", "Ahmed", "Mourad").forEach(name -> {
+
 
                 Permis permis1 = new Permis();
                 permis1.setNum_Permis("51/285502");
@@ -210,6 +210,7 @@ public class MiniProjetParkingApplication {
 
                 //Voiture
                 Voiture voiture1=new Voiture();
+                voiture1.setCode_Voiture(1);
                 voiture1.setAssurance(assurance1);
                 voiture1.setVignette(vignette1);
                 voiture1.setVisiteTechnique(visiteTechnique1);
@@ -218,7 +219,9 @@ public class MiniProjetParkingApplication {
                 voiture1.setParking(parking);
                 voitureRepo.save(voiture1);
 
+
                 Voiture voiture2=new Voiture();
+                voiture2.setCode_Voiture(2);
                 voiture2.setAssurance(assurance2);
                 voiture2.setVignette(vignette2);
                 voiture2.setVisiteTechnique(visiteTechnique2);
@@ -228,6 +231,7 @@ public class MiniProjetParkingApplication {
                 voitureRepo.save(voiture2);
 
                 Voiture voiture3=new Voiture();
+                voiture3.setCode_Voiture(3);
                 voiture3.setAssurance(assurance3);
                 voiture3.setVignette(vignette3);
                 voiture3.setVisiteTechnique(visiteTechnique3);
@@ -236,7 +240,7 @@ public class MiniProjetParkingApplication {
                 voiture3.setParking(parking);
                 voitureRepo.save(voiture3);
 
-            });
+
         };
     }
 }

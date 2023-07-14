@@ -20,6 +20,7 @@ public class Parking {
     private String Adresse;
     private int NombreMax;
     private int NombreActuel;
+
     @OneToMany(mappedBy = "parking")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Voiture> voiture;
