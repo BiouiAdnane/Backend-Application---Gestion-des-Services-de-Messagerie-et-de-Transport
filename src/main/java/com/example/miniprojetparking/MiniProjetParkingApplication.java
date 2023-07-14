@@ -1,12 +1,10 @@
 package com.example.miniprojetparking;
 
-import com.example.miniprojetparking.Entities.Conducteur;
-import com.example.miniprojetparking.Entities.Permis;
-import com.example.miniprojetparking.Entities.Personne;
+import com.example.miniprojetparking.Entities.*;
+import com.example.miniprojetparking.Enums.EtatVT;
+import com.example.miniprojetparking.Enums.TypeCarburant;
 import com.example.miniprojetparking.Enums.TypePermis;
-import com.example.miniprojetparking.Repositorys.ConducteurRepo;
-import com.example.miniprojetparking.Repositorys.PermisRepo;
-import com.example.miniprojetparking.Repositorys.PersonneRepo;
+import com.example.miniprojetparking.Repositorys.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,10 +21,19 @@ public class MiniProjetParkingApplication {
         SpringApplication.run(MiniProjetParkingApplication.class, args);
     }
 
-    //@Bean
-    CommandLineRunner start(PersonneRepo personneRepo,
+    @Bean
+    CommandLineRunner start(
                             ConducteurRepo conducteurRepo,
-                            PermisRepo permisRepo
+                            PermisRepo permisRepo,
+                            AssuranceRepo assuranceRepo,
+                            Carte_GriseRepo carteGriseRepo,
+                            GestionnaireRepo gestionnaireRepo,
+                            ParkingRepo parkingRepo,
+                            ReposRepo reposRepo,
+                            VignetteRepo vignetteRepo,
+                            VisiteTechniqueRepo visiteTechniqueRepo,
+                            VoitureRepo voitureRepo,
+                            VoyageRepo voyageRepo
                             ) {
         return args -> {
             Stream.of("Adnan", "Ahmed", "Mourad").forEach(name -> {
@@ -95,6 +102,104 @@ public class MiniProjetParkingApplication {
                 conducteur3.setVoyage(null);
                 conducteur3.setDate_Naissance(LocalDate.of(2000,2,20));
                 conducteurRepo.save(conducteur3);
+
+
+                // Assurance
+                Assurance assurance1 = new Assurance();
+                assurance1.setCode_Assurance("AssuranceC01");
+                assurance1.setType_Assurance("Normal");
+                assurance1.setDate_Debut(LocalDate.of(2022,7,20));
+                assurance1.setDate_Fin(LocalDate.of(2023,7,20));
+                assuranceRepo.save(assurance1);
+
+                Assurance assurance2 = new Assurance();
+                assurance2.setCode_Assurance("AssuranceC02");
+                assurance2.setType_Assurance("Tout risque");
+                assurance2.setDate_Debut(LocalDate.of(2023,6,20));
+                assurance2.setDate_Fin(LocalDate.of(2024,6,20));
+                assuranceRepo.save(assurance2);
+
+                Assurance assurance3 = new Assurance();
+                assurance3.setCode_Assurance("AssuranceC03");
+                assurance3.setType_Assurance("Normal");
+                assurance3.setDate_Debut(LocalDate.of(2022,12,20));
+                assurance3.setDate_Fin(LocalDate.of(2023,12,20));
+                assuranceRepo.save(assurance3);
+
+                //Carte Grise
+                Carte_Grise carteGrise1 = new Carte_Grise();
+                carteGrise1.setNum_Immatricualtion("Carte01");
+                carteGrise1.setDate_Debut(LocalDate.of(2022,12,20));
+                carteGrise1.setDate_Fin(LocalDate.of(2032,12,20));
+                carteGrise1.setModel("Sprinter");
+                carteGrise1.setMarque("Mercedess");
+                carteGrise1.setNom_Proprietaire("Entreprise");
+                carteGrise1.setNombre_Place(24);
+                carteGrise1.setTypeCarburant(TypeCarburant.Essence);
+                carteGriseRepo.save(carteGrise1);
+
+                Carte_Grise carteGrise2 = new Carte_Grise();
+                carteGrise2.setNum_Immatricualtion("Carte02");
+                carteGrise2.setDate_Debut(LocalDate.of(2020,12,20));
+                carteGrise2.setDate_Fin(LocalDate.of(2030,12,20));
+                carteGrise2.setModel("i8");
+                carteGrise2.setMarque("Irizar");
+                carteGrise2.setNom_Proprietaire("Entreprise");
+                carteGrise2.setNombre_Place(56);
+                carteGrise2.setTypeCarburant(TypeCarburant.Diesel);
+                carteGriseRepo.save(carteGrise2);
+
+                Carte_Grise carteGrise3 = new Carte_Grise();
+                carteGrise3.setNum_Immatricualtion("Carte03");
+                carteGrise3.setDate_Debut(LocalDate.of(2018,12,20));
+                carteGrise3.setDate_Fin(LocalDate.of(2028,12,20));
+                carteGrise3.setModel("VM");
+                carteGrise3.setMarque("Volvo");
+                carteGrise3.setNom_Proprietaire("Entreprise");
+                carteGrise3.setNombre_Place(2);
+                carteGrise3.setTypeCarburant(TypeCarburant.Essence);
+                carteGriseRepo.save(carteGrise3);
+
+                // Vignette
+                Vignette vignette1 = new Vignette();
+                vignette1.setDate_Debut(LocalDate.of(2023,5,20));
+                vignette1.setDate_Fin(LocalDate.of(2024,5,20));
+                vignetteRepo.save(vignette1);
+
+                Vignette vignette2 = new Vignette();
+                vignette2.setDate_Debut(LocalDate.of(2023,6,20));
+                vignette2.setDate_Fin(LocalDate.of(2024,6,20));
+                vignetteRepo.save(vignette2);
+
+                Vignette vignette3 = new Vignette();
+                vignette3.setDate_Debut(LocalDate.of(2023,3,20));
+                vignette3.setDate_Fin(LocalDate.of(2024,3,20));
+                vignetteRepo.save(vignette3);
+
+
+                //Visite Technique
+                Visite_Technique visiteTechnique1 = new Visite_Technique();
+                visiteTechnique1.setCode_VisTech("VisC001");
+                visiteTechnique1.setDate_debut(LocalDate.of(2023,5,20));
+                visiteTechnique1.setDate_Fin(LocalDate.of(2024,5,20));
+                visiteTechnique1.setEtat_Voiture(EtatVT.Conforme);
+                visiteTechniqueRepo.save(visiteTechnique1);
+
+                Visite_Technique visiteTechnique2 = new Visite_Technique();
+                visiteTechnique2.setCode_VisTech("VisC002");
+                visiteTechnique2.setDate_debut(LocalDate.of(2023,6,20));
+                visiteTechnique2.setDate_Fin(LocalDate.of(2024,6,20));
+                visiteTechnique2.setEtat_Voiture(EtatVT.Conforme);
+                visiteTechniqueRepo.save(visiteTechnique2);
+
+                Visite_Technique visiteTechnique3 = new Visite_Technique();
+                visiteTechnique3.setCode_VisTech("VisC003");
+                visiteTechnique3.setDate_debut(LocalDate.of(2023,3,20));
+                visiteTechnique3.setDate_Fin(LocalDate.of(2024,3,20));
+                visiteTechnique3.setEtat_Voiture(EtatVT.Conforme);
+                visiteTechniqueRepo.save(visiteTechnique3);
+
+
 
             });
         };
