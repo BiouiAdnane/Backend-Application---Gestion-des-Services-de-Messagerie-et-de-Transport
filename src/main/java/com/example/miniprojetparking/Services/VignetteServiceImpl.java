@@ -2,10 +2,16 @@ package com.example.miniprojetparking.Services;
 
 import com.example.miniprojetparking.Entities.Vignette;
 import com.example.miniprojetparking.Repositorys.VignetteRepo;
+import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@Transactional
+@AllArgsConstructor
 public class VignetteServiceImpl implements VignetteService{
     private VignetteRepo vignetteRepo;
     @Override

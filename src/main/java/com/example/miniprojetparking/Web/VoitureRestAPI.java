@@ -1,8 +1,6 @@
 package com.example.miniprojetparking.Web;
 
-import com.example.miniprojetparking.Entities.Conducteur;
 import com.example.miniprojetparking.Entities.Voiture;
-import com.example.miniprojetparking.Services.ConducteurService;
 import com.example.miniprojetparking.Services.VoitureService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

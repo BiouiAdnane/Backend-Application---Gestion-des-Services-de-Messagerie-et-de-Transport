@@ -2,10 +2,16 @@ package com.example.miniprojetparking.Services;
 
 import com.example.miniprojetparking.Entities.Carte_Grise;
 import com.example.miniprojetparking.Repositorys.Carte_GriseRepo;
+import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@Transactional
+@AllArgsConstructor
 public class CarteGriseServiceImp implements CarteGriseService{
     private Carte_GriseRepo carteGriseRepo;
     @Override

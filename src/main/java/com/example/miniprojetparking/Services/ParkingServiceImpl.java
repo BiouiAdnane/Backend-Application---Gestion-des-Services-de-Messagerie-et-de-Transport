@@ -2,10 +2,16 @@ package com.example.miniprojetparking.Services;
 
 import com.example.miniprojetparking.Entities.Parking;
 import com.example.miniprojetparking.Repositorys.ParkingRepo;
+import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@Transactional
+@AllArgsConstructor
 public class ParkingServiceImpl implements ParkingService{
     private ParkingRepo parkingRepo;
     @Override

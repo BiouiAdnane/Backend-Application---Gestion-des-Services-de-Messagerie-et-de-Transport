@@ -200,6 +200,41 @@ public class MiniProjetParkingApplication {
                 visiteTechniqueRepo.save(visiteTechnique3);
 
 
+                //Parking
+                Parking parking= new Parking();
+                parking.setAdresse("Casablanca Ouled Ziane");
+                parking.setVille("Casablanca");
+                parking.setNombreMax(20);
+                parking.setNombreActuel(0);
+                parkingRepo.save(parking);
+
+                //Voiture
+                Voiture voiture1=new Voiture();
+                voiture1.setAssurance(assurance1);
+                voiture1.setVignette(vignette1);
+                voiture1.setVisiteTechnique(visiteTechnique1);
+                voiture1.setCarteGrise(carteGrise1);
+                voiture1.setTypePermisVoiture(TypePermis.B);
+                voiture1.setParking(parking);
+                voitureRepo.save(voiture1);
+
+                Voiture voiture2=new Voiture();
+                voiture2.setAssurance(assurance2);
+                voiture2.setVignette(vignette2);
+                voiture2.setVisiteTechnique(visiteTechnique2);
+                voiture2.setCarteGrise(carteGrise2);
+                voiture2.setTypePermisVoiture(TypePermis.D);
+                voiture2.setParking(parking);
+                voitureRepo.save(voiture2);
+
+                Voiture voiture3=new Voiture();
+                voiture3.setAssurance(assurance3);
+                voiture3.setVignette(vignette3);
+                voiture3.setVisiteTechnique(visiteTechnique3);
+                voiture3.setCarteGrise(carteGrise3);
+                voiture3.setTypePermisVoiture(TypePermis.C);
+                voiture3.setParking(parking);
+                voitureRepo.save(voiture3);
 
             });
         };

@@ -2,10 +2,16 @@ package com.example.miniprojetparking.Services;
 
 import com.example.miniprojetparking.Entities.Gestionnaire;
 import com.example.miniprojetparking.Repositorys.GestionnaireRepo;
+import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@Transactional
+@AllArgsConstructor
 public class GestionnaireServiceImpl implements GestionnaireService{
     private GestionnaireRepo gestionnaireRepo;
     @Override

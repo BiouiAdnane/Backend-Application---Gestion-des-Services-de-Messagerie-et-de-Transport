@@ -1,35 +1,43 @@
 package com.example.miniprojetparking.Services;
 
 import com.example.miniprojetparking.Entities.Voiture;
+import com.example.miniprojetparking.Entities.Voyage;
 import com.example.miniprojetparking.Repositorys.VoitureRepo;
+import com.example.miniprojetparking.Repositorys.VoyageRepo;
+import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-public class VoyageServiceImpl implements VoitureService{
-    private VoitureRepo voitureRepo;
+@Service
+@Transactional
+@AllArgsConstructor
+public class VoyageServiceImpl implements VoyageService{
+    private VoyageRepo voyageRepo;
     @Override
-    public Voiture saveVoiture(Voiture voiture) {
-        return voitureRepo.save(voiture);
+    public Voyage saveVoyage(Voyage voyage) {
+        return voyageRepo.save(voyage);
     }
 
     @Override
-    public List<Voiture> getListVoiture() {
-        return voitureRepo.findAll();
+    public List<Voyage> getListVoyage() {
+        return voyageRepo.findAll();
     }
 
     @Override
-    public Optional<Voiture> findVoiture(int id) {
-        return voitureRepo.findById(id);
+    public Optional<Voyage> findVoyage(int id) {
+        return voyageRepo.findById(id);
     }
 
     @Override
-    public void deleteVoiture(int id) {
-        voitureRepo.deleteById(id);
+    public void deleteVoyage(int id) {
+        voyageRepo.deleteById(id);
     }
 
     @Override
-    public Voiture updateVoiture(Voiture voiture) {
-        return voitureRepo.save(voiture);
+    public Voyage updateVoyage(Voyage voyage) {
+        return voyageRepo.save(voyage);
     }
 }
