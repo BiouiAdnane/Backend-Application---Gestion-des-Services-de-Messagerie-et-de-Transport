@@ -16,18 +16,24 @@ import java.util.List;
 public class Voiture {
     @Id
     private int code_Voiture;
-    private TypePermis TypePermisVoiture;
+    private TypePermis typePermisVoiture;
+
     @OneToMany(mappedBy = "voiture")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Voyage> voyage;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Assurance assurance;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Visite_Technique visiteTechnique;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Vignette vignette;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Carte_Grise carteGrise;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Parking parking;
 

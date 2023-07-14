@@ -15,7 +15,11 @@ import java.util.Date;
 public class Vignette {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Code_Vignette;
-    private LocalDate Date_Debut;
-    private LocalDate Date_Fin;
+    private int code_Vignette;
+    private LocalDate date_Debut;
+    private LocalDate date_Fin;
+
+    @OneToOne(mappedBy = "vignette")
+    @JoinColumn(name = "code_Voiture")
+    private Voiture voiture;
 }

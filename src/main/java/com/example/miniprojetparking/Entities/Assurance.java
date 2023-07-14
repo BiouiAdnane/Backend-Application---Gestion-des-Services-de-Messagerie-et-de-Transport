@@ -3,6 +3,7 @@ package com.example.miniprojetparking.Entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,9 +18,13 @@ import java.util.Date;
 @Entity
 public class Assurance {
     @Id
-    private String Code_Assurance;
-    private String Type_Assurance;
-    private LocalDate Date_Debut;
-    private LocalDate Date_Fin;
+    private String code_Assurance;
+    private String type_Assurance;
+    private LocalDate date_Debut;
+    private LocalDate date_Fin;
+
+    @OneToOne(mappedBy = "assurance")
+    @JoinColumn(name = "code_Voiture")
+    private Voiture voiture;
 
 }

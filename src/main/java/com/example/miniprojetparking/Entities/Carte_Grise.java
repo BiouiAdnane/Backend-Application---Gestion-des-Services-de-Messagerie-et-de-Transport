@@ -15,13 +15,17 @@ import java.util.Date;
 @Entity
 public class Carte_Grise {
     @Id
-    private String Num_Immatricualtion;
-    private LocalDate Date_Debut;
-    private LocalDate Date_Fin;
-    private String Nom_Proprietaire;
-    private int Nombre_Place;
-    private String Marque;
-    private String Model;
-    private TypeCarburant TypeCarburant;
+    private String num_Immatricualtion;
+    private LocalDate date_Debut;
+    private LocalDate date_Fin;
+    private String nom_Proprietaire;
+    private int nombre_Place;
+    private String marque;
+    private String model;
+    private TypeCarburant typeCarburant;
+
+    @OneToOne(mappedBy = "carteGrise")
+    @JoinColumn(name = "code_Voiture")
+    private Voiture voiture;
 
 }

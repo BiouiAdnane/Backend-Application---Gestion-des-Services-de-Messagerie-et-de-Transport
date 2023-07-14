@@ -15,8 +15,12 @@ import java.util.Date;
 @Entity
 public class Visite_Technique {
     @Id
-    private String Code_VisTech;
-    private LocalDate Date_debut;
-    private LocalDate Date_Fin;
-    private EtatVT Etat_Voiture;
+    private String code_VisTech;
+    private LocalDate date_debut;
+    private LocalDate date_Fin;
+    private EtatVT etat_Voiture;
+
+    @OneToOne(mappedBy = "visiteTechnique")
+    @JoinColumn(name = "code_Voiture")
+    private Voiture voiture;
 }
