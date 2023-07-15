@@ -4,6 +4,7 @@ import com.example.miniprojetparking.Entities.*;
 import com.example.miniprojetparking.Enums.EtatVT;
 import com.example.miniprojetparking.Enums.TypeCarburant;
 import com.example.miniprojetparking.Enums.TypePermis;
+import com.example.miniprojetparking.Enums.TypeVoyage;
 import com.example.miniprojetparking.Repositorys.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,7 +22,7 @@ public class MiniProjetParkingApplication {
         SpringApplication.run(MiniProjetParkingApplication.class, args);
     }
 
-    //@Bean
+    @Bean
     CommandLineRunner start(
                             ConducteurRepo conducteurRepo,
                             PermisRepo permisRepo,
@@ -44,7 +45,7 @@ public class MiniProjetParkingApplication {
                 permis1.setDate_Delivrance(LocalDate.of(2020,9,7));
                 permis1.setDate_Fin(LocalDate.of(2030,9,21));
                 permis1.setLieu_Delivrance("Casablanca");
-                permisRepo.save(permis1);
+                //permisRepo.save(permis1);
 
                 Permis permis2 = new Permis();
                 permis2.setNum_Permis("46/894029");
@@ -52,7 +53,7 @@ public class MiniProjetParkingApplication {
                 permis2.setDate_Delivrance(LocalDate.of(2021,5,17));
                 permis2.setDate_Fin(LocalDate.of(2031,5,29));
                 permis2.setLieu_Delivrance("Boujdour");
-                permisRepo.save(permis2);
+                //permisRepo.save(permis2);
 
                 Permis permis3 = new Permis();
                 permis3.setNum_Permis("23/454523");
@@ -60,7 +61,7 @@ public class MiniProjetParkingApplication {
                 permis3.setDate_Delivrance(LocalDate.of(2018,4,7));
                 permis3.setDate_Fin(LocalDate.of(2028,4,25));
                 permis3.setLieu_Delivrance("Settat");
-                permisRepo.save(permis3);
+                //permisRepo.save(permis3);
 
 
 
@@ -75,7 +76,7 @@ public class MiniProjetParkingApplication {
                 conducteur1.setReposList(null);
                 conducteur1.setVoyage(null);
                 conducteur1.setDate_Naissance(LocalDate.of(2001,7,20));
-                conducteurRepo.save(conducteur1);
+                //conducteurRepo.save(conducteur1);
 
                 Conducteur conducteur2 = new Conducteur();
                 conducteur2.setCIN("JF214530");
@@ -88,7 +89,7 @@ public class MiniProjetParkingApplication {
                 conducteur2.setReposList(null);
                 conducteur2.setVoyage(null);
                 conducteur2.setDate_Naissance(LocalDate.of(2001,9,2));
-                conducteurRepo.save(conducteur2);
+                //conducteurRepo.save(conducteur2);
 
                 Conducteur conducteur3 = new Conducteur();
                 conducteur3.setCIN("SA1015");
@@ -101,7 +102,7 @@ public class MiniProjetParkingApplication {
                 conducteur3.setReposList(null);
                 conducteur3.setVoyage(null);
                 conducteur3.setDate_Naissance(LocalDate.of(2000,2,20));
-                conducteurRepo.save(conducteur3);
+                //conducteurRepo.save(conducteur3);
 
 
                 // Assurance
@@ -110,21 +111,21 @@ public class MiniProjetParkingApplication {
                 assurance1.setType_Assurance("Normal");
                 assurance1.setDate_Debut(LocalDate.of(2022,7,20));
                 assurance1.setDate_Fin(LocalDate.of(2023,7,20));
-                assuranceRepo.save(assurance1);
+                //assuranceRepo.save(assurance1);
 
                 Assurance assurance2 = new Assurance();
                 assurance2.setCode_Assurance("AssuranceC02");
                 assurance2.setType_Assurance("Tout risque");
                 assurance2.setDate_Debut(LocalDate.of(2023,6,20));
                 assurance2.setDate_Fin(LocalDate.of(2024,6,20));
-                assuranceRepo.save(assurance2);
+                //assuranceRepo.save(assurance2);
 
                 Assurance assurance3 = new Assurance();
                 assurance3.setCode_Assurance("AssuranceC03");
                 assurance3.setType_Assurance("Normal");
                 assurance3.setDate_Debut(LocalDate.of(2022,12,20));
                 assurance3.setDate_Fin(LocalDate.of(2023,12,20));
-                assuranceRepo.save(assurance3);
+                //assuranceRepo.save(assurance3);
 
                 //Carte Grise
                 Carte_Grise carteGrise1 = new Carte_Grise();
@@ -136,7 +137,7 @@ public class MiniProjetParkingApplication {
                 carteGrise1.setNom_Proprietaire("Entreprise");
                 carteGrise1.setNombre_Place(24);
                 carteGrise1.setTypeCarburant(TypeCarburant.Essence);
-                carteGriseRepo.save(carteGrise1);
+                //carteGriseRepo.save(carteGrise1);
 
                 Carte_Grise carteGrise2 = new Carte_Grise();
                 carteGrise2.setNum_Immatricualtion("Carte02");
@@ -147,7 +148,7 @@ public class MiniProjetParkingApplication {
                 carteGrise2.setNom_Proprietaire("Entreprise");
                 carteGrise2.setNombre_Place(56);
                 carteGrise2.setTypeCarburant(TypeCarburant.Diesel);
-                carteGriseRepo.save(carteGrise2);
+                //carteGriseRepo.save(carteGrise2);
 
                 Carte_Grise carteGrise3 = new Carte_Grise();
                 carteGrise3.setNum_Immatricualtion("Carte03");
@@ -158,23 +159,23 @@ public class MiniProjetParkingApplication {
                 carteGrise3.setNom_Proprietaire("Entreprise");
                 carteGrise3.setNombre_Place(2);
                 carteGrise3.setTypeCarburant(TypeCarburant.Essence);
-                carteGriseRepo.save(carteGrise3);
+                //carteGriseRepo.save(carteGrise3);
 
                 // Vignette
                 Vignette vignette1 = new Vignette();
                 vignette1.setDate_Debut(LocalDate.of(2023,5,20));
                 vignette1.setDate_Fin(LocalDate.of(2024,5,20));
-                vignetteRepo.save(vignette1);
+                //vignetteRepo.save(vignette1);
 
                 Vignette vignette2 = new Vignette();
                 vignette2.setDate_Debut(LocalDate.of(2023,6,20));
                 vignette2.setDate_Fin(LocalDate.of(2024,6,20));
-                vignetteRepo.save(vignette2);
+                //vignetteRepo.save(vignette2);
 
                 Vignette vignette3 = new Vignette();
                 vignette3.setDate_Debut(LocalDate.of(2023,3,20));
                 vignette3.setDate_Fin(LocalDate.of(2024,3,20));
-                vignetteRepo.save(vignette3);
+                //vignetteRepo.save(vignette3);
 
 
                 //Visite Technique
@@ -183,21 +184,21 @@ public class MiniProjetParkingApplication {
                 visiteTechnique1.setDate_debut(LocalDate.of(2023,5,20));
                 visiteTechnique1.setDate_Fin(LocalDate.of(2024,5,20));
                 visiteTechnique1.setEtat_Voiture(EtatVT.Conforme);
-                visiteTechniqueRepo.save(visiteTechnique1);
+                //visiteTechniqueRepo.save(visiteTechnique1);
 
                 Visite_Technique visiteTechnique2 = new Visite_Technique();
                 visiteTechnique2.setCode_VisTech("VisC002");
                 visiteTechnique2.setDate_debut(LocalDate.of(2023,6,20));
                 visiteTechnique2.setDate_Fin(LocalDate.of(2024,6,20));
                 visiteTechnique2.setEtat_Voiture(EtatVT.Conforme);
-                visiteTechniqueRepo.save(visiteTechnique2);
+                //visiteTechniqueRepo.save(visiteTechnique2);
 
                 Visite_Technique visiteTechnique3 = new Visite_Technique();
                 visiteTechnique3.setCode_VisTech("VisC003");
                 visiteTechnique3.setDate_debut(LocalDate.of(2023,3,20));
                 visiteTechnique3.setDate_Fin(LocalDate.of(2024,3,20));
                 visiteTechnique3.setEtat_Voiture(EtatVT.Conforme);
-                visiteTechniqueRepo.save(visiteTechnique3);
+                //visiteTechniqueRepo.save(visiteTechnique3);
 
 
                 //Parking
@@ -206,7 +207,7 @@ public class MiniProjetParkingApplication {
                 parking.setVille("Casablanca");
                 parking.setNombreMax(20);
                 parking.setNombreActuel(0);
-                parkingRepo.save(parking);
+                //parkingRepo.save(parking);
 
                 //Voiture
                 Voiture voiture1=new Voiture();
@@ -217,7 +218,7 @@ public class MiniProjetParkingApplication {
                 voiture1.setCarteGrise(carteGrise1);
                 voiture1.setTypePermisVoiture(TypePermis.B);
                 voiture1.setParking(parking);
-                voitureRepo.save(voiture1);
+                //voitureRepo.save(voiture1);
 
 
                 Voiture voiture2=new Voiture();
@@ -228,7 +229,7 @@ public class MiniProjetParkingApplication {
                 voiture2.setCarteGrise(carteGrise2);
                 voiture2.setTypePermisVoiture(TypePermis.D);
                 voiture2.setParking(parking);
-                voitureRepo.save(voiture2);
+                //voitureRepo.save(voiture2);
 
                 Voiture voiture3=new Voiture();
                 voiture3.setCode_Voiture(3);
@@ -238,7 +239,19 @@ public class MiniProjetParkingApplication {
                 voiture3.setCarteGrise(carteGrise3);
                 voiture3.setTypePermisVoiture(TypePermis.C);
                 voiture3.setParking(parking);
-                voitureRepo.save(voiture3);
+                //voitureRepo.save(voiture3);
+
+                //Voyage
+                Voyage voyage1 = new Voyage();
+                voyage1.setDate_Debut(LocalDate.of(2023,8,1));
+                voyage1.setDate_Fin(LocalDate.of(2023,8,16));
+                voyage1.setType_Voyage(TypeVoyage.Transport_Personne);
+                voyage1.setConducteur(conducteur1);
+                voyage1.setNombre_Voyageur(15);
+                voyage1.setVoiture(voiture1);
+                voyage1.setVille_Depart("Casablanca");
+                voyage1.setVille_Arrive("Tanger");
+               // voyageRepo.save(voyage1);
 
 
         };
