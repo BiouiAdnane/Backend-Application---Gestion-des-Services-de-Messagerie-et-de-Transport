@@ -254,6 +254,21 @@ public class MiniProjetParkingApplication {
                // voyageRepo.save(voyage1);
 
 
+                //Repos
+                Repos repos1 = new Repos();
+                repos1.setConducteur(conducteur2);
+                repos1.setDate_Debut(LocalDate.of(2023,8,1));
+                repos1.setDate_Fin(LocalDate.of(2023,8,13));
+                //reposRepo.save(repos1);
+
+                Repos repos2 = new Repos();
+                repos2.setConducteur(conducteur3);
+                repos2.setDate_Debut(LocalDate.of(2023,7,17));
+                repos2.setDate_Fin(LocalDate.of(2023,7,19));
+                //reposRepo.save(repos2);
+
+
+
         };
     }
 }
