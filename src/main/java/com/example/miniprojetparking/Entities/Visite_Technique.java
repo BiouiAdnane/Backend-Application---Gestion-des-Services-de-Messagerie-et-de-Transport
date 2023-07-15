@@ -19,8 +19,8 @@ public class Visite_Technique {
     private LocalDate date_debut;
     private LocalDate date_Fin;
     private EtatVT etat_Voiture;
-
+/*
     @OneToOne(mappedBy = "visiteTechnique")
     @JoinColumn(name = "code_Voiture")
-    private Voiture voiture;
+    private Voiture voiture;*/
 }

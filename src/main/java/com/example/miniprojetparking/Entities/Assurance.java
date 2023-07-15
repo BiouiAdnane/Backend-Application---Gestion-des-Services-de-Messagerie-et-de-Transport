@@ -23,8 +23,9 @@ public class Assurance {
     private LocalDate date_Debut;
     private LocalDate date_Fin;
 
+    /*
     @OneToOne(mappedBy = "assurance")
     @JoinColumn(name = "code_Voiture")
-    private Voiture voiture;
+    private Voiture voiture;*/
 
 }

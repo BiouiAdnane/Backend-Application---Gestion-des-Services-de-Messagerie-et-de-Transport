@@ -2,6 +2,7 @@ package com.example.miniprojetparking.Entities;
 
 import com.example.miniprojetparking.Enums.TypePermis;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,22 +26,22 @@ public class Voiture {
     private List<Voyage> voyage;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JsonBackReference
     private Assurance assurance;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JsonBackReference
+
     private Visite_Technique visiteTechnique;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JsonBackReference
+
     private Vignette vignette;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JsonBackReference
+
     private Carte_Grise carteGrise;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Parking parking;
 
 }

@@ -24,8 +24,8 @@ public class Carte_Grise {
     private String model;
     private TypeCarburant typeCarburant;
 
-    @OneToOne(mappedBy = "carteGrise")
+    /*@OneToOne(mappedBy = "carteGrise")
     @JoinColumn(name = "code_Voiture")
-    private Voiture voiture;
+    private Voiture voiture;*/
 
 }

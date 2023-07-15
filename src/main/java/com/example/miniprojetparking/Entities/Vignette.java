@@ -18,8 +18,8 @@ public class Vignette {
     private int code_Vignette;
     private LocalDate date_Debut;
     private LocalDate date_Fin;
-
+/*
     @OneToOne(mappedBy = "vignette")
     @JoinColumn(name = "code_Voiture")
-    private Voiture voiture;
+    private Voiture voiture;*/
 }
