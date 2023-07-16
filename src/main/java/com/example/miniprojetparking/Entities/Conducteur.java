@@ -10,10 +10,11 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
+@DiscriminatorValue("Conducteur")
 @NoArgsConstructor
 @Entity
 public class Conducteur extends Personne{
-    private String Matricule;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Permis permis;
     @OneToMany(mappedBy = "conducteur")

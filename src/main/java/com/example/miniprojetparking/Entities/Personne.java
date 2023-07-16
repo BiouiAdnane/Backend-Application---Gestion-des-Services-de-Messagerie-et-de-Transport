@@ -11,11 +11,13 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "TYPE", length = 14 , discriminatorType = DiscriminatorType.STRING)
 @Entity
 public class Personne {
     @Id
     private String CIN;
+    private String Matricule;
     private String Nom;
     private String Prenom;
     private String Adresse;

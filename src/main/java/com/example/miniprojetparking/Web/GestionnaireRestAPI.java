@@ -16,11 +16,11 @@ import java.util.Optional;
 public class GestionnaireRestAPI {
     private GestionnaireService gestionnaireService;
     @GetMapping("/gestionnaires")
-    public List<Gestionnaire> conducteurs(){
+    public List<Gestionnaire> gestionnaires(){
         return gestionnaireService.getListGestionnaire();
     }
     @GetMapping("/gestionnaires/{id}")
-    public Optional<Gestionnaire> getGestionnaire(@PathVariable int id) {
+    public Optional<Gestionnaire> getGestionnaire(@PathVariable String id) {
         return gestionnaireService.findGestionnaire(id);
     }
     @PostMapping("/gestionnaires")
@@ -28,12 +28,12 @@ public class GestionnaireRestAPI {
         return gestionnaireService.saveGestionnaire(gestionnaire);
     }
     @PutMapping("/gestionnaires/{id}")
-    public Gestionnaire updateGestionnaire(@PathVariable int id,@RequestBody Gestionnaire gestionnaire) {
-        gestionnaire.setCode_Gest(id);
+    public Gestionnaire updateGestionnaire(@PathVariable String id,@RequestBody Gestionnaire gestionnaire) {
+        gestionnaire.setMatricule(id);
         return gestionnaireService.updateGestionnaire(gestionnaire);
     }
     @DeleteMapping("/gestionnaires/{id}")
-    public void deleteGestionnaire(@PathVariable int id){
+    public void deleteGestionnaire(@PathVariable String id){
         gestionnaireService.deleteGestionnaire(id);
     }
 

@@ -1,8 +1,6 @@
 package com.example.miniprojetparking.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,10 +8,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@DiscriminatorValue("Gestionnaire")
 @Entity
 public class Gestionnaire extends Personne{
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Code_Gest;
+
     private String Email;
     private String Mot_de_Passe;
 }

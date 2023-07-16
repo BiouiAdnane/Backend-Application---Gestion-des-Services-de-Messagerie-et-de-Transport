@@ -24,12 +24,12 @@ public class GestionnaireServiceImpl implements GestionnaireService{
         return gestionnaireRepo.findAll();
     }
 
-    public Optional<Gestionnaire> findGestionnaire(int id) {
+    public Optional<Gestionnaire> findGestionnaire(String id) {
         return gestionnaireRepo.findById(id);
     }
 
     @Override
-    public void deleteGestionnaire(int id) {
+    public void deleteGestionnaire(String id) {
         gestionnaireRepo.deleteById(id);
 
     }

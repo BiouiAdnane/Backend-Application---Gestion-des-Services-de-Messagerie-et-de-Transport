@@ -9,8 +9,8 @@ import java.util.Optional;
 public interface GestionnaireService {
     Gestionnaire saveGestionnaire (Gestionnaire gestionnaire)  ;
     List<Gestionnaire> getListGestionnaire();
-    Optional<Gestionnaire> findGestionnaire(int id)  ;
-    void deleteGestionnaire(int id);
+    Optional<Gestionnaire> findGestionnaire(String id)  ;
+    void deleteGestionnaire(String id);
     Gestionnaire updateGestionnaire(Gestionnaire gestionnaire) ;
     List<Gestionnaire> searchGestionnaire(String keyword);
     int countGestionnaire();
