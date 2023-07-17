@@ -12,11 +12,19 @@ import java.util.List;
 public interface DisponibilitéRepo extends JpaRepository<Voyage,Integer > {
 
     //Liste des conducteurs disponibles
-    @Query("SELECT  c  FROM Conducteur c " +
-            " Where  c.CIN NOT In " +
-            "(SELECT  v.conducteur.CIN FROM Voyage v WHERE " +
-            "((:dateDebut between v.Date_Debut and v.Date_Fin) OR (:dateFin between v.Date_Debut and v.Date_Fin)))"
+    @Query("SELECT c FROM Conducteur c " +
+            "WHERE c.CIN NOT IN " +
+            "(SELECT v.conducteur.CIN FROM Voyage v WHERE " +
+            "(:dateDebut BETWEEN v.Date_Debut AND v.Date_Fin) OR " +
+            "(:dateFin BETWEEN v.Date_Debut AND v.Date_Fin)) " +
+            "AND c.CIN NOT IN " +
+            "(SELECT r.conducteur.CIN FROM Repos r WHERE " +
+            "(:dateDebut BETWEEN r.date_Debut AND r.date_Fin) OR " +
+            "(:dateFin BETWEEN r.date_Debut AND r.date_Fin))"
     )
-    List<Conducteur> disponibleCondicteurs(@Param("dateDebut") LocalDate dateDebut,
-                                       @Param("dateFin") LocalDate dateFin);
+    List<Conducteur> disponibleConducteurs(@Param("dateDebut") LocalDate dateDebut,
+                                           @Param("dateFin") LocalDate dateFin);
+
+    //Liste des vehicules disponibles
+    @Query("SELECT v FROM Voiture v WHERE v.")
 }

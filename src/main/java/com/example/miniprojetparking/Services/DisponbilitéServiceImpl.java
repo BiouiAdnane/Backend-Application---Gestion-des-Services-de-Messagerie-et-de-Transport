@@ -17,6 +17,6 @@ public class DisponbilitéServiceImpl implements DisponibilitéService{
 
     @Override
     public List<Conducteur> ListConducteurDispo(LocalDate dateDebut, LocalDate dateFin) {
-        return disponibilitéRepo.disponibleCondicteurs(dateDebut, dateFin);
+        return disponibilitéRepo.disponibleConducteurs(dateDebut, dateFin);
     }
 }
