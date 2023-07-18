@@ -1,6 +1,7 @@
 package com.example.miniprojetparking.Web;
 
 import com.example.miniprojetparking.Entities.Conducteur;
+import com.example.miniprojetparking.Entities.Voiture;
 import com.example.miniprojetparking.Services.DisponibilitéService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,5 +21,11 @@ public class DisponibiliteRestAPI {
     public List<Conducteur> conducteurs(@PathVariable LocalDate dateDebut , LocalDate dateFin)
     {
         return disponibilitéService.ListConducteurDispo(dateDebut, dateFin);
+    }
+
+    @GetMapping("/disponibles/vehicules/{dateDebut}/{dateFin}")
+    public List<Voiture> vehicules(@PathVariable LocalDate dateDebut , LocalDate dateFin)
+    {
+        return disponibilitéService.ListVehiculeDispo(dateDebut, dateFin);
     }
 }
