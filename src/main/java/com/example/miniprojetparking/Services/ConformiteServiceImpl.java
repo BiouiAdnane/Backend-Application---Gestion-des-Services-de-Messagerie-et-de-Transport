@@ -16,6 +16,6 @@ public class ConformiteServiceImpl implements ConformiteService{
     private ConformiteRepo conformiteRepo;
     @Override
     public List<Conducteur> ListConducteurConforme(TypePermis typePermis) {
-        return conformiteRepo.disponibleConducteurs(typePermis);
+        return conformiteRepo.findByTypePermis(typePermis);
     }
 }

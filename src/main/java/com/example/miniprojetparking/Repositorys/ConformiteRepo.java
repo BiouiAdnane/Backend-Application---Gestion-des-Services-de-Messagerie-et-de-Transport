@@ -6,17 +6,21 @@ import com.example.miniprojetparking.Entities.Voyage;
 import com.example.miniprojetparking.Enums.TypePermis;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.List;
-
+@EnableJpaRepositories
 public interface ConformiteRepo extends JpaRepository<Conducteur,String > {
+    @Query("SELECT c FROM Conducteur c WHERE :typePermis MEMBER OF c.permis.TypePermisList")
+    List<Conducteur> findByTypePermis(@Param("typePermis") TypePermis typePermis);
+
     //Liste des conducteurs qui sont conformes
-    @Query("SELECT c FROM Conducteur c " +
+    /*@Query("SELECT c FROM Conducteur c " +
             "JOIN c.permis p " +
             "WHERE p.TypePermisList = :typePermis")
-    List<Conducteur> disponibleConducteurs(@Param("typePermis") TypePermis typePermis);
+    List<Conducteur> disponibleConducteurs(@Param("typePermis") TypePermis typePermis);*/
 
 
 
