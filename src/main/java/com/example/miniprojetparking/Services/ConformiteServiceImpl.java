@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -21,7 +22,7 @@ public class ConformiteServiceImpl implements ConformiteService{
     }
 
     @Override
-    public List<Voiture> getListeVoituresConformesParTypePermis(String typePermis) {
-        return conformiteRepo.findByTypePermisVehiculeConforme(typePermis, EtatVT.Conforme);
+    public List<Voiture> getListeVoituresConformesParTypePermis(String typePermis, LocalDate dateDebut, LocalDate dateFin) {
+        return conformiteRepo.findByTypePermisVehiculeConforme(typePermis, EtatVT.Conforme, dateDebut, dateFin);
     }
 }
