@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ConformiteService {
     List<Conducteur> getListConducteurConforme(String typePermis);
-    List<Voiture> getListVehiculeConforme(String typePermis);
+    List<Voiture> getListeVoituresConformesParTypePermis(String typePermis);
 }

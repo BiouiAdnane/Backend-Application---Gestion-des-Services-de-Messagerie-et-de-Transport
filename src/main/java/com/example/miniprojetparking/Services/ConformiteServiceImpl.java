@@ -2,6 +2,7 @@ package com.example.miniprojetparking.Services;
 
 import com.example.miniprojetparking.Entities.Conducteur;
 import com.example.miniprojetparking.Entities.Voiture;
+import com.example.miniprojetparking.Enums.EtatVT;
 import com.example.miniprojetparking.Repositorys.ConformiteRepo;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -20,7 +21,7 @@ public class ConformiteServiceImpl implements ConformiteService{
     }
 
     @Override
-    public List<Voiture> getListVehiculeConforme(String typePermis) {
-        return conformiteRepo.findByTypePermisVehicule(typePermis);
+    public List<Voiture> getListeVoituresConformesParTypePermis(String typePermis) {
+        return conformiteRepo.findByTypePermisVehiculeConforme(typePermis, EtatVT.Conforme);
     }
 }

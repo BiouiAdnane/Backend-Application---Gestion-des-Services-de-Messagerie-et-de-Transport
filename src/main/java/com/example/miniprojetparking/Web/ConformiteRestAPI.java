@@ -3,7 +3,6 @@ package com.example.miniprojetparking.Web;
 import com.example.miniprojetparking.Entities.Conducteur;
 import com.example.miniprojetparking.Entities.Voiture;
 import com.example.miniprojetparking.Services.ConformiteService;
-import com.example.miniprojetparking.Services.DisponibilitéService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +25,6 @@ public class ConformiteRestAPI {
     @GetMapping("/conformes/vehicules/{typePermis}")
     public List<Voiture> vehicules(@PathVariable String typePermis )
     {
-        return conformiteService.getListVehiculeConforme(typePermis);
+        return conformiteService.getListeVoituresConformesParTypePermis(typePermis);
     }
 }
