@@ -19,7 +19,7 @@ public class Voiture {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int code_Voiture;
-    private TypePermis typePermisVoiture;
+    private String typePermisVoiture;
 
     @OneToMany(mappedBy = "voiture")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
