@@ -1,6 +1,5 @@
 package com.example.miniprojetparking.Entities;
 
-import com.example.miniprojetparking.Enums.TypePermis;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,5 +20,5 @@ public class Permis {
     private LocalDate Date_Fin;
     private String Lieu_Delivrance;
     @Enumerated(EnumType.STRING)
-    private List<TypePermis> TypePermisList;
-}
+    @ElementCollection
+    private List<String> typePermisList;}
