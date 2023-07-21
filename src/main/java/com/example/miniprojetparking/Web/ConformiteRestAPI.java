@@ -22,9 +22,10 @@ public class ConformiteRestAPI {
     {
         return conformiteService.getListConducteurConforme(typePermis);
     }
+
     @GetMapping("/conformes/vehicules/{typePermis}/{dateDebut}/{dateFin}")
-    public List<Voiture> vehicules(@PathVariable String typePermis, LocalDate dateDebut, LocalDate dateFin )
+    public List<Voiture> vehicules(@PathVariable LocalDate dateDebut, @PathVariable LocalDate dateFin, @PathVariable String typePermis)
     {
-        return conformiteService.getListeVoituresConformesParTypePermis(typePermis, dateDebut, dateFin);
+        return conformiteService.getListeVoituresConforme(dateDebut, dateFin , typePermis);
     }
 }

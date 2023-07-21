@@ -21,8 +21,10 @@ public class ConformiteServiceImpl implements ConformiteService{
         return conformiteRepo.findByTypePermis(typePermis);
     }
 
+
+
     @Override
-    public List<Voiture> getListeVoituresConformesParTypePermis(String typePermis, LocalDate dateDebut, LocalDate dateFin) {
-        return conformiteRepo.findByTypePermisVehiculeConforme(typePermis, EtatVT.Conforme, dateDebut, dateFin);
+    public List<Voiture> getListeVoituresConforme(LocalDate dateDebut , LocalDate dateFin, String typePermis) {
+        return conformiteRepo.findVoitureByAssurance(dateDebut , dateFin, typePermis, EtatVT.Conforme);
     }
 }

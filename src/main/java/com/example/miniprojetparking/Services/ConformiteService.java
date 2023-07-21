@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ConformiteService {
     List<Conducteur> getListConducteurConforme(String typePermis);
-    List<Voiture> getListeVoituresConformesParTypePermis(String typePermis, LocalDate dateDebut, LocalDate dateFin);
+    List<Voiture> getListeVoituresConforme(LocalDate dateDebut, LocalDate dateFin , String typePermis);
 }
