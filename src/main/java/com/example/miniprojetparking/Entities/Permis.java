@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Data
@@ -19,6 +18,5 @@ public class Permis {
     private LocalDate Date_Delivrance;
     private LocalDate Date_Fin;
     private String Lieu_Delivrance;
-    @Enumerated(EnumType.STRING)
     @ElementCollection
     private List<String> typePermisList;}
