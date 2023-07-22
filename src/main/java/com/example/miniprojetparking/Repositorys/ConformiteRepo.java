@@ -21,9 +21,9 @@ public interface ConformiteRepo extends JpaRepository<Conducteur,String > {
 
 
     @Query("SELECT v FROM Voiture v WHERE :dateDebut > v.assurance.date_Debut AND :dateFin <= v.assurance.date_Fin " +
-            "AND :dateDebut > v.visiteTechnique.date_debut AND :dateFin <= v.visiteTechnique.date_Fin  " +
-            "AND :dateDebut > v.vignette.date_Debut AND :dateFin <= v.vignette.date_Fin " +
-            "AND :dateDebut > v.carteGrise.date_Debut AND :dateFin <= v.carteGrise.date_Fin " +
+            "AND :dateDebut >= v.visiteTechnique.date_debut AND :dateFin <= v.visiteTechnique.date_Fin  " +
+            "AND :dateDebut >= v.vignette.date_Debut AND :dateFin <= v.vignette.date_Fin " +
+            "AND :dateDebut >= v.carteGrise.date_Debut AND :dateFin <= v.carteGrise.date_Fin " +
             "AND v.typePermisVoiture = :typePermis AND v.visiteTechnique.etat_Voiture =:etatVT")
     List<Voiture> findVoitureByAssurance(@Param("dateDebut") LocalDate dateDebut ,@Param("dateFin") LocalDate dateFin,
                                          @Param("typePermis") String typePermis, @Param("etatVT") EtatVT etatVT);
