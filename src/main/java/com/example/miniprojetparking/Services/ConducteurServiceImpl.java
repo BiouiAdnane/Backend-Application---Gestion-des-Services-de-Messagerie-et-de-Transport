@@ -45,11 +45,13 @@ public class ConducteurServiceImpl implements ConducteurService{
 
     @Override
     public List<Conducteur> searchConducteur(String keyword) {
-        return null;
+
+        return conducteurRepo.searchConducteurs(keyword);
     }
 
     @Override
     public int countConducteur() {
+
         return 0;
     }
 }
