@@ -16,7 +16,7 @@ import java.util.Optional;
 public class PermisRestAPI {
     private PermisService permisService;
     @GetMapping("/permis")
-    public List<Permis> conducteurs(){
+    public List<Permis> permisList(){
         return permisService.getListPermis();
     }
     @GetMapping("/permis/{id}")
