@@ -19,4 +19,5 @@ public class Permis {
     private LocalDate Date_Fin;
     private String Lieu_Delivrance;
     @ElementCollection
-    private List<String> typePermisList;}
+    private List<String> typePermisList;
+}
