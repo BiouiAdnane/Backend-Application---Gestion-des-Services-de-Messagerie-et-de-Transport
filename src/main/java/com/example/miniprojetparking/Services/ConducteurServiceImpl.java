@@ -50,6 +50,11 @@ public class ConducteurServiceImpl implements ConducteurService{
     }
 
     @Override
+    public Conducteur findConducteurNumPermis(String Num_Permis) {
+        return conducteurRepo.conducteurPermis(Num_Permis);
+    }
+
+    @Override
     public int countConducteur() {
 
         return 0;

@@ -8,6 +8,7 @@ import com.example.miniprojetparking.Repositorys.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -37,7 +38,7 @@ public class MiniProjetParkingApplication {
 
                 //Permis
                 Permis permis1 = new Permis();
-                permis1.setNum_Permis("51/285502");
+                permis1.setNum_Permis("51-285502");
                 permis1.setTypePermisList(Arrays.asList("A" , "B" ,"EB"));
                 permis1.setDate_Delivrance(LocalDate.of(2020,9,7));
                 permis1.setDate_Fin(LocalDate.of(2030,9,21));
@@ -45,7 +46,7 @@ public class MiniProjetParkingApplication {
                 permisRepo.save(permis1);
 
                 Permis permis2 = new Permis();
-                permis2.setNum_Permis("46/894029");
+                permis2.setNum_Permis("46-894029");
                 permis2.setTypePermisList(Arrays.asList("B" , "D" ,"C"));
                 permis2.setDate_Delivrance(LocalDate.of(2021,5,17));
                 permis2.setDate_Fin(LocalDate.of(2031,5,29));
@@ -53,7 +54,7 @@ public class MiniProjetParkingApplication {
                 permisRepo.save(permis2);
 
                 Permis permis3 = new Permis();
-                permis3.setNum_Permis("23/454523");
+                permis3.setNum_Permis("23-454523");
                 permis3.setTypePermisList(Arrays.asList("C" , "B" ,"EB"));
                 permis3.setDate_Delivrance(LocalDate.of(2018,4,7));
                 permis3.setDate_Fin(LocalDate.of(2028,4,25));

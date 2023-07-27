@@ -12,5 +12,6 @@ public interface ConducteurService {
     void deleteConducteur(String id);
     Conducteur updateConducteur(Conducteur conducteur) ;
     List<Conducteur> searchConducteur(String keyword);
+    Conducteur findConducteurNumPermis(String Num_Permis);
     int countConducteur();
 }

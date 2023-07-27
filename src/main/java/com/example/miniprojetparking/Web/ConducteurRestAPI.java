@@ -35,6 +35,10 @@ public class ConducteurRestAPI {
         conducteurService.deleteConducteur(id);
     }
 
+    @GetMapping("/conducteurPermis/{Num_Permis}")
+    public Conducteur getConducteurByPermis(@PathVariable String Num_Permis) {
+        return conducteurService.findConducteurNumPermis(Num_Permis);
+    }
 
     @GetMapping("/conducteurs/search")
     public List<Conducteur> searchConducteur(@RequestParam(name = "keyword" , defaultValue = "") String keyword){
