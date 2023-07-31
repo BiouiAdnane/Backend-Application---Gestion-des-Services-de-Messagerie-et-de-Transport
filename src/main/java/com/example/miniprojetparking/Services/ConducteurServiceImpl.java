@@ -4,6 +4,7 @@ import com.example.miniprojetparking.Entities.Conducteur;
 import com.example.miniprojetparking.Repositorys.ConducteurRepo;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class ConducteurServiceImpl implements ConducteurService{
     @Override
     public List<Conducteur> getListConducteur() {
 
-        return conducteurRepo.findAll();
+        return conducteurRepo.getAllConducteurs();
     }
 
     @Override
