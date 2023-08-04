@@ -244,7 +244,7 @@ public class MiniProjetParkingApplication {
                 voiture1.setVisiteTechnique(visiteTechnique1);
                 voiture1.setCarteGrise(carteGrise1);
                 voiture1.setTypePermisVoiture("B");
-                voiture1.setParking(parking);
+                //voiture1.setParking(parking);
                 voitureRepo.save(voiture1);
 
 
@@ -255,7 +255,7 @@ public class MiniProjetParkingApplication {
                 voiture2.setVisiteTechnique(visiteTechnique2);
                 voiture2.setCarteGrise(carteGrise2);
                 voiture2.setTypePermisVoiture("D");
-                voiture2.setParking(parking);
+                //voiture2.setParking(parking);
                 voitureRepo.save(voiture2);
 
                 Voiture voiture3=new Voiture();
@@ -265,7 +265,7 @@ public class MiniProjetParkingApplication {
                 voiture3.setVisiteTechnique(visiteTechnique3);
                 voiture3.setCarteGrise(carteGrise3);
                 voiture3.setTypePermisVoiture("C");
-                voiture3.setParking(parking);
+                //voiture3.setParking(parking);
                 voitureRepo.save(voiture3);
 
                 //Voyage

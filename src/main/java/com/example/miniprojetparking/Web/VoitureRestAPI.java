@@ -18,7 +18,7 @@ public class VoitureRestAPI {
         return voitureService.getListVoiture();
     }
     @GetMapping("/voitures/{id}")
-    public Optional<Voiture> getConducteur(@PathVariable int id) {
+    public Optional<Voiture> getVoiture(@PathVariable int id) {
         return voitureService.findVoiture(id);
     }
     @PostMapping("/voitures")

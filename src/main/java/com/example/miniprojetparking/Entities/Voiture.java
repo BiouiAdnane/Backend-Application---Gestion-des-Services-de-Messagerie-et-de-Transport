@@ -38,8 +38,8 @@ public class Voiture {
 
     private Carte_Grise carteGrise;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+/*    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private Parking parking;
+    private Parking parking;  */
 
 }
