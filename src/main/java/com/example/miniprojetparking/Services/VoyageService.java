@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface VoyageService {
     Voyage saveVoyage (Voyage voyage)  ;
-    List<Voyage> getListVoyage();
+    List<Voyage> searchVoyage( String keyword);
     Optional<Voyage> findVoyage(int id)  ;
     void deleteVoyage(int id);
     Voyage updateVoyage(Voyage voyage) ;

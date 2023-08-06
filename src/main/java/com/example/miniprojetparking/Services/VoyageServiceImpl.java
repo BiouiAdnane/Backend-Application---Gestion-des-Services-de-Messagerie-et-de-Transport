@@ -22,8 +22,8 @@ public class VoyageServiceImpl implements VoyageService{
     }
 
     @Override
-    public List<Voyage> getListVoyage() {
-        return voyageRepo.findAll();
+    public List<Voyage> searchVoyage( String keyword) {
+        return voyageRepo.searchVoyage( keyword);
     }
 
     @Override

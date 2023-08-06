@@ -15,9 +15,9 @@ import java.util.Optional;
 @CrossOrigin("*")
 public class VoyageRestAPI {
     private VoyageService voyageService;
-    @GetMapping("/voyages")
-    public List<Voyage> voyages(){
-        return voyageService.getListVoyage();
+    @GetMapping("/voyages/search")
+    public List<Voyage> searchVoyage(@RequestParam(name = "keyword" , defaultValue = "") String keyword){
+        return voyageService.searchVoyage("%"+keyword+"%");
     }
     @GetMapping("/voyages/{id}")
     public Optional<Voyage> getVoyage(@PathVariable int id) {
