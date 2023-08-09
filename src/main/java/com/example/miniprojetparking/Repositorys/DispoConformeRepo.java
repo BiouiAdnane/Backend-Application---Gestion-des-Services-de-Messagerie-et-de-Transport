@@ -21,7 +21,8 @@ public interface DispoConformeRepo extends JpaRepository<Conducteur,String > {
             "(:dateDebut BETWEEN r.date_Debut AND r.date_Fin) OR " +
             "(:dateFin BETWEEN r.date_Debut AND r.date_Fin)) " +
             "AND c.CIN IN " +
-            "(SELECT c2.CIN FROM Conducteur c2 JOIN c2.permis p WHERE :typePermis MEMBER OF p.typePermisList)"
+            "(SELECT c2.CIN FROM Conducteur c2 JOIN c2.permis p WHERE :typePermis MEMBER OF p.typePermisList)" +
+            "order by c.Matricule asc "
     )
     List<Conducteur> findConducteursDisponiblesByTypePermis(
             @Param("dateDebut") LocalDate dateDebut,
@@ -39,7 +40,8 @@ public interface DispoConformeRepo extends JpaRepository<Conducteur,String > {
             "AND v.code_Voiture NOT IN " +
             "(SELECT vo.voiture.code_Voiture FROM Voyage vo WHERE " +
             "(:dateDebut BETWEEN vo.Date_Debut AND vo.Date_Fin) OR " +
-            "(:dateFin BETWEEN vo.Date_Debut AND vo.Date_Fin))"
+            "(:dateFin BETWEEN vo.Date_Debut AND vo.Date_Fin))" +
+            "order by v.code_Voiture asc "
     )
     List<Voiture> findVoituresDisponiblesAndConforme(
             @Param("dateDebut") LocalDate dateDebut,
