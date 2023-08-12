@@ -19,6 +19,7 @@ public class MiniProjetParkingApplication {
     public static void main(String[] args) {
         SpringApplication.run(MiniProjetParkingApplication.class, args);
     }
+    //Before Security
 
     //@Bean
     CommandLineRunner start(
