@@ -44,3 +44,8 @@ L'un des aspects les plus complexes de l'application est la **création de nouve
 
 👉Pour une expérience complète, consulte également la partie **frontend** de l'application qui s'occupe de l'interface utilisateur et des interactions en temps réel : <a href="https://github.com/BiouiAdnane/Frontend-Application---Gestion-des-Services-de-Messagerie-et-de-Transport" target="_blank">Lien vers le dépôt Frontend</a>.
 
+## 📝 Licence
+
+Ce projet est licencié sous la licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+
